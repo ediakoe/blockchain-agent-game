@@ -7,8 +7,10 @@ for(let y of [7,14])for(let x=1;x<31;x++)map[y][x]='1';
 for(let x of [10,21])for(let y=1;y<23;y++)map[y][x]='1';
 [[2,2,8,5],[13,2,18,5],[23,2,29,5],[2,9,8,12],[13,9,18,12],[23,9,29,12],[3,17,7,20],[10,17,14,20],[18,17,23,20],[26,17,29,20]].forEach(a=>block(...a));
 [[5,7],[16,7],[26,7],[4,14],[16,14],[26,14],[10,4],[10,11],[10,18],[21,4],[21,11],[21,18]].forEach(([x,y])=>{map[y][x]='0';if(y===7||y===14)map[y][x+1]='0';else map[y+1][x]='0'});
-// Keep mission targets and terminals on walkable city tiles.
+// Open every mission interaction cell and its approach tile so objectives can always be completed.
 [[4,3],[15,3],[26,10],[4,11],[16,10],[27,3],[6,11],[16,12]].forEach(([x,y])=>{map[y][x]='0';map[y][x+1]='0';map[y+1][x]='0';});
+// Explicit approach corridors for the Defender command node and the Hacker extraction node.
+[[5,11],[6,11],[16,10],[16,11],[16,12]].forEach(([x,y])=>map[y][x]='0');
 const shards=[{x:4.5,y:3.5,taken:false},{x:15.5,y:3.5,taken:false},{x:26.5,y:10.5,taken:false}];
 const incidents=[{x:4.5,y:11.5,taken:false},{x:16.5,y:10.5,taken:false},{x:27.5,y:3.5,taken:false}];
 const vault={x:6.5,y:11.5},extract={x:16.5,y:11.8},beacon={x:8.8,y:18.2};
