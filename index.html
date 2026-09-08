@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blocktrace: Agent Protocol</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app">
+    <canvas id="game" aria-label="First person blockchain game"></canvas>
+    <section class="hud">
+      <div class="topbar">
+        <div class="brand">BLOCKTRACE <span>// AGENT PROTOCOL</span></div>
+        <div id="status">OFFLINE</div>
+      </div>
+      <div class="objective panel">
+        <small>ACTIVE MISSION</small>
+        <strong id="mission">Reach the Genesis Vault</strong>
+        <p id="hint">Find the blue beacon and collect the protocol shard.</p>
+      </div>
+      <div class="stats panel">
+        <div><small>SYNC</small><strong id="sync">0%</strong></div>
+        <div><small>SHARDS</small><strong id="shards">0 / 3</strong></div>
+        <div><small>LEVEL</small><strong id="level">1</strong></div>
+      </div>
+      <div id="feed" class="feed panel"></div>
+      <div class="controls">WASD / ARROWS move · MOUSE look · E interact · SHIFT sprint</div>
+    </section>
+    <div id="crosshair">+</div>
+    <div id="start" class="modal">
+      <div class="modal-card">
+        <div class="eyebrow">AUTONOMOUS BLOCKCHAIN SIM</div>
+        <h1>Blocktrace</h1>
+        <p>Enter the network. Recover lost protocol shards. Let the Agent adapt to your choices.</p>
+        <button id="startBtn">ENTER THE NETWORK</button>
+      </div>
+    </div>
+    <div id="complete" class="modal hidden">
+      <div class="modal-card">
+        <div class="eyebrow">MISSION COMPLETE</div>
+        <h2>Genesis Vault Unlocked</h2>
+        <p id="completeText"></p>
+        <button id="againBtn">RUN ANOTHER TRACE</button>
+      </div>
+    </div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
